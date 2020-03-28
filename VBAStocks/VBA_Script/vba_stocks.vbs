@@ -112,7 +112,7 @@ Sub ticker():
             ElseIf ws.Cells(i, 11).Value = Application.WorksheetFunction.Min(ws.Range("K2:K" & lastRow_summaryTable)) Then
                 'Assign the ticker symbol to the ticker cell
                 ws.Cells(3, 16).Value = ws.Cells(i, 9).Value
-                'Assign the minimum percent_change to the greatest % increase cell
+'Assign the minimum percent_change to the greatest % decrease cell
                 ws.Cells(3, 17).Value = ws.Cells(i, 11).Value
                 'Format the cell as percentage
                 ws.Cells(3, 17).Style = "Percent"
