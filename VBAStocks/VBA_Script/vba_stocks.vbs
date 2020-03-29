@@ -41,7 +41,7 @@ Sub ticker():
                  'Set the formula of yearly change
                  yearly_change = close_price - open_price
                   
-                  'It's not divisible when the denominator (open_price) is 0, so set the percent change to  0 when the open price is 0.
+                  'It's not divisible when the denominator (open_price) is 0, so set the percent change to 0 when the open price is 0.
                   If open_price = 0 Then
                     percent_change = 0
                   Else: percent_change = yearly_change / open_price
@@ -100,7 +100,7 @@ Sub ticker():
         'Loop through the summary table
         For i = 2 To lastRow_summaryTable
             
-            'Find the maximum, minimum percent changes, and the greatest total volume using conditionals
+             'Find the maximum, minimum percent changes, and the greatest total volume using conditionals
             If ws.Cells(i, 11).Value = Application.WorksheetFunction.Max(ws.Range("K2:K" & lastRow_summaryTable)) Then
                 'Assign the ticker symbol to the ticker cell
                 ws.Cells(2, 16).Value = ws.Cells(i, 9).Value
