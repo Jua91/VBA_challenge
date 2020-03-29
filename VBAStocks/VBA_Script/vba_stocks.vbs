@@ -41,7 +41,7 @@ Sub ticker():
                  'Set the formula of yearly change
                  yearly_change = close_price - open_price
                   
-                  'It's not divisible when the denominator (open_price) is 0, so when the open price is 0, the percent change should be 0.
+                  'It's not divisible when the denominator (open_price) is 0, so set the percent change to  0 when the open price is 0.
                   If open_price = 0 Then
                     percent_change = 0
                   Else: percent_change = yearly_change / open_price
@@ -80,10 +80,10 @@ Sub ticker():
         For i = 2 To lastRow_summaryTable
         
             If ws.Cells(i, 10).Value > 0 Then
-                'If the value is positive, fill the green color
+                'If the value is positive, fill the cells with the green color
                 ws.Cells(i, 10).Interior.ColorIndex = 4
             Else
-                'Otherwise, fill the red color
+                'Otherwise, fill the cells with the red color
                 ws.Cells(i, 10).Interior.ColorIndex = 3
             End If
             
@@ -112,7 +112,7 @@ Sub ticker():
             ElseIf ws.Cells(i, 11).Value = Application.WorksheetFunction.Min(ws.Range("K2:K" & lastRow_summaryTable)) Then
                 'Assign the ticker symbol to the ticker cell
                 ws.Cells(3, 16).Value = ws.Cells(i, 9).Value
-                'Assign the minimum percent_change to the greatest % increase cell
+                'Assign the minimum percent_change to the greatest % decrease cell
                 ws.Cells(3, 17).Value = ws.Cells(i, 11).Value
                 'Format the cell as percentage
                 ws.Cells(3, 17).Style = "Percent"
